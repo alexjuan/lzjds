@@ -1,0 +1,56 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Home page
+GET     /index23D                                       Application.index23D
+
+GET     /indexMain                                       App.indexMain
+
+
+# Home page
+GET     /Login                                       Login.login
+
+GET     /projectionImage                                       Login.projectionImage
+#模型浏览
+GET     /viewModel                                       Models.viewModel
+#机房浏览
+GET     /viewMachineHouse                                Machinehouse.index
+#室内导航
+GET     /indoorNavigation                                IndoorNavigation.index
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path资源
+GET     /public/                                staticDir:public
+GET     /play/                                    staticDir:play
+POST    /JJ_JDBCTools/HKAll                     JJ_JDBCTools.JJ_JDBCQueryAll
+POST    /ZA_JDBCTools/ZA_JDBCQueryAll          ZA_JDBCTools.ZA_JDBCQueryAll
+#模糊查询
+POST    /JJ_JDBCTools/JJ_JDBCQueryByID          JJ_JDBCTools.JJ_JDBCQueryByID
+POST    /ZA_JDBCTools/ZA_JDBCQueryByID          ZA_JDBCTools.ZA_JDBCQueryByID
+
+POST    /ZA_JDBCTools/HKAll                     ZA_JDBCTools.HKAll
+POST    /Device_HKController/Device_HKQueryAll  Device_HKController.Device_HKQueryAll
+POST    /Device_HKController/DeviceSbmc         Device_HKController.DeviceSbmc
+POST    /Device_HKController1/DeviceSbmc         Device_HKController1.DeviceSbmc
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+#Device相关
+POST    /DeviceController/DeviceQuery                           DeviceController.DeviceQuery
+POST    /DeviceController/DeviceQueryAll                           DeviceController.DeviceQueryAll
+POST    /DeviceController/DeviceSave                           DeviceController.DeviceSave
+POST    /DeviceController/DeviceDeleteByID                           DeviceController.DeviceDeleteByID
+POST     /DeviceController/DeviceSbmc                                 DeviceController.DeviceSbmc
+#Person  相关
+POST    /PersonController/PersonDeleteByID                           PersonController.PersonDeleteByID
+#Plan 相关
+POST    /PlanController/PlanQueryAll                                 PlanController.PlanQueryAll
+
+POST    /ArtemisTest/ArtemisAll                                      ArtemisTest.ArtemisAll
+POST    /ArtemisTest/ArtemisDatetime                                 ArtemisTest.ArtemisDatetime
+POST    /ArtemisTest/ArtemisJkd                                       ArtemisTest.ArtemisJkd
